@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <script >
+       function wlc (){
+        document.getElementById('hi').style.opacity = "100%";
+        setTimeout(intro, 1000);
+       }
+       function intro(){
+         document.getElementById('name').style.opacity = "100%";
+         setTimeout(who,1000);
+       }
+       function who(){
+         document.getElementById('job').style.opacity = "100%";
+         document.getElementById('button-holder').style.opacity = "100%";
+       }
+        addEventListener("load",wlc);
+    </script>
+    <header class="header">
+      <div class="intro">
+        <div><p id='hi'>Hi!</p> <p id='name'>My name is <span style="">Soufiane EL Mameri</span>,</p> <p id='job'>and i'm a Full-Stack web developer</p></div>
+       <div id="button-holder">
+        <div id="button">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          More
+        </div>
+      </div>
+      </div>
+    </header>
+    <main>
+    </main>
+    <footer>
+    </footer>
+  </body>
+</html>
