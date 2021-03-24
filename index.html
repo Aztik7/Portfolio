@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/e777c3da9d.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <script >
@@ -13,6 +14,7 @@
        }
        function intro(){
          document.getElementById('name').style.opacity = "100%";
+         document.getElementById('button-holder').style.display = "block";
          setTimeout(who,1000);
        }
        function who(){
@@ -20,24 +22,47 @@
          document.getElementById('button-holder').style.opacity = "100%";
        }
         addEventListener("load",wlc);
+      function slideup(){
+        document.getElementById('cover').style.top = "-100%";
+        setTimeout(remove, 800);
+      }
+      function remove(){
+        document.getElementById('intro').style.display = "none";
+      }
+
     </script>
-    <header class="header" style="background-image: url(bg.gif)">
-      <div class="intro">
-        <div><p id='hi'>Hi!</p> <p id='name'>My name is <span style="">Soufiane EL Mameri</span>,</p> <p id='job'>and i'm a Full-Stack web developer</p></div>
+    <div id= "cover">
+    <header class="header"  style="background-image: url(bg.gif)">
+      <div id="intro">
+        <div class="txt"><p id='hi'>Hi!</p> <p id='name'>My name is <span style="color:#20858a">Soufiane EL Mameri</span>,</p> <p id='job'>and i'm a <span style="color:#20858a">Full-Stack web developer</span>.</p></div>
        <div id="button-holder">
-        <div id="button">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          More
+        <div id="button" onclick="slideup()">
+          <p>More</p>
+          <i class="fas bounce fa-angle-down"></i>
         </div>
       </div>
       </div>
     </header>
-    <main>
+    <main class="main">
+      <div class="main1">
+      <div class="about">
+         <h1>ABOUT ME</h1>
+         <p>My name is Soufiane El Mameri and i'm 21 years old, i live in Morocco, i've been web developing for the past 2 years,during this peroid i learned many programing languages you can see them in the skills box. </p>
+      </div>
+      <div class="skills">
+         <h1>MY SKILLS</h1>
+         <ul>
+           <li class="html">HTML <i class="fab fa-html5"></i><div class="lvl html"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div></li>
+           <li class="css">CSS  <i class="fab fa-css3-alt"></i> <div class="lvl css"><i class="fas fa-star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></i><i class="far fa-star"></i> </div></li>
+           <li class="js">JavaScript <i class="fab fa-js"></i> <div class="lvl js"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> </div></li>
+           <li class="react">REACT <i class="fab fa-react"></i> <div class="lvl react"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></div></li>
+           <li class="php">PHP <i class="fab fa-php"></i> <div class="lvl php"><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></div></li>
+         </ul>
+      </div>
+    </div>
     </main>
     <footer>
     </footer>
+  </div>
   </body>
 </html>

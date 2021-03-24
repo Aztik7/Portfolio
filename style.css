@@ -1,16 +1,36 @@
 *{
    margin: 0;
    padding: 0;
-
+}
+@font-face {
+  font-family: teko;
+  src: url(teko.ttf);
+}
+@font-face {
+  font-family: elctro;
+  src: url(elctro.ttf);
+}
+body{
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+}
+#cover {
+     position: relative;
+     top: 0% ;
+     width: inherit;
+     height: inherit;
+     transition: top 1s ease;
 }
 .header{
+    display: block;
     width: 100%;
     height: 100vh;
     background-color: black;
     background-repeat: no-repeat;
     background-size: 100% auto;
 }
-.intro{
+#intro{
    position: relative;
    top: 50%;
    left: 49.3%;
@@ -19,21 +39,23 @@
    height: 300px;
    background-color: ble;
 }
-.intro div {
+.txt {
    color: white;
-   font-size: 40px;
-   font-family: sans-serif;
+   font-size: 35px;
    text-align: center;
+   line-height: 2;
    user-select: none;
+   font-family: elctro;
   }
 #hi{
   opacity: 0;
   transition: opacity 1.5s ease;
+  font-weight: bold;
+  font-size: 40px;
 }
 #name{
   opacity: 0;
   transition: opacity 1.5s ease;
-
 }
 #job{
   opacity: 0;
@@ -41,11 +63,12 @@
 }
 /*                  BUTTON                  */
 #button-holder{
+   display: none;
    position: relative;
-   width: 30%;
+   width: 40%;
    height: 13%;
    margin: 40px auto;
-   opacity: 0;
+   opacity: 0 ;
    transition: opacity 1.5s ease;
    user-select: none;
 }
@@ -54,43 +77,44 @@
    height: 100%;
    width: auto;
    position: relative;
-   font-size: 30px;
+   color: white;
    text-align: center;
    cursor: pointer;
    overflow: hidden;
+   font-family: elctro;
+   letter-spacing: 4px;
 }
-#button  span{
-    position: absolute;
-    display: block;
+#button i {
+   transition: transform 0.5s,font-size 0.5s,color 0.5s ;
+   font-size: 28px;
 }
-#button  span:nth-child(1){
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg,transparent,#273831);
+#button p {
+   transition: font-size 0.5s,color 0.5s;
+   font-size: 30px;
+   display: inline;
 }
-#button  span:nth-child(2){
- bottom: -100%;
- right: 0;
- width: 2.5px;
- height: 100%;
- background: linear-gradient(#273831,transparent);
+#button:hover p{
+   font-size: 40px;
+   color: #20858a ;
 }
-#button  span:nth-child(3){
- bottom: 0;
- right: -100%;
- width: 100%;
- height: 2px;
- background: linear-gradient(-90deg,transparent,#273831);
+#button:hover .bounce{
+   transform: rotate(90deg);
+   font-size: 38px;
+   color: #20858a;
+   -moz-animation: bounce 1.5s infinite;
+   -webkit-animation: bounce 1.5s infinite;
+   animation: bounce 1.5s infinite;
 }
-
-#button  span:nth-child(4){
- top: -100%;
- left: 0;
- width: 2.5px;
- height: 100%;
- background: linear-gradient(transparent,#273831);
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-15px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
 }
 /*                  BUTTON HOVER                   */
 /*#button:hover{
@@ -99,23 +123,94 @@
   box-shadow: 0 0 10px #1a470c, 0 0 40px #1a470c, 0 0 80px #1a470c;
   transition-delay: 0.8s  ;
 }*/
-#button:hover span:nth-child(1){
-  left: 0%;
-  transition: 0.8s
+/*                 MAIN                   */
+.main{
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(180deg,black,#00171c,#00171c,#00171c);
+  font-family: teko;
 }
-#button:hover span:nth-child(2){
- bottom: 0%;
- transition: 0.9s;
+.main1{
+  width: 80%;
+  height: inherit;
+  background: blu;
+  margin: auto;
 }
-#button:hover span:nth-child(3){
- right: 0%;
- transition: 0.8s;
+.about{
+  width: 30%;
+  height: auto;
+  margin: 20px 0 0 100px;
+  background-color: bue;
+  color: white;
+  user-select: none;
 }
-#button:hover span:nth-child(4){
- top: 0%;
- transition: 0.9s;
+H1 {
+  margin: 0 0 30px 0;
+  font-size: 50px;
+  color: #20858a;
+  transition: color 0.5s;
 }
-
+H1:hover{
+  color: #20858a;
+}
+.about p {
+  font-size: 30px;
+}
+.skills{
+  width: 40%;
+  height: auto;
+  background-color: ble;
+  color: white;
+  float: right;
+  user-select: none;
+}
+.skills ul{
+   width: 70%;
+   height: auto;
+   margin:auto;
+}
+.skills li {
+   width: 100%;
+   font-size: 30px;
+   list-style: none;
+   margin: 10px 0 20px 0;
+   border-bottom: solid white;
+   transition: color 0.5s;
+}
+.skills li i{
+  float: left;
+  margin: 0 5px 0 0;
+}
+.fab {
+  font-size: 30px;
+}
+.lvl{
+  display: inline;
+  float: right;
+  width: auto;
+  height: auto;
+}
+.lvl i{
+  font-size: 22px;
+}
+.html:hover{
+  color: #e34c26;
+  }
+.css:hover{
+  color:#264de4;
+}
+.js:hover{
+  color: #f0db4f;
+}
+.react:hover{
+  color : #61dbfb;
+}
+.php:hover{
+  color:#474A8A;
+}
 /*@media screen and (max-width: 1120px) {
     .marsh-hello{
        height: 300px;
