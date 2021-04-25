@@ -25,16 +25,22 @@
       function slideup(){
         document.getElementById('cover').style.top = "-100%";
         setTimeout(remove, 800);
+        setTimeout(slideIn,200);
       }
       function remove(){
         document.getElementById('intro').style.display = "none";
       }
-
+      function slideIn(){
+        document.getElementById('about').style.left = "0%";
+        document.getElementById('about').style.opacity = "100%";
+        document.getElementById('skills').style.right = "0%";
+        document.getElementById('skills').style.opacity = "100%";
+      }
     </script>
     <div id= "cover">
     <header class="header"  style="background-image: url(bg.gif)">
       <div id="intro">
-        <div class="txt"><p id='hi'>Hi!</p> <p id='name'>My name is <span style="color:#20858a">Soufiane EL Mameri</span>,</p> <p id='job'>and i'm a <span style="color:#20858a">Full-Stack web developer</span>.</p></div>
+        <div class="txt"><p id='hi'>Hi!</p> <p id='name'>My name is <span style="color:#20858a;text-shadow: none;">Soufiane EL Mameri</span>,</p> <p id='job'>and i'm a <span style="color:#20858a;text-shadow:none">Full-Stack web developer</span>.</p></div>
        <div id="button-holder">
         <div id="button" onclick="slideup()">
           <p>More</p>
@@ -45,11 +51,12 @@
     </header>
     <main class="main">
       <div class="main1">
-      <div class="about">
+      <div class="about" id="about">
          <h1>ABOUT ME</h1>
          <p>My name is Soufiane El Mameri and i'm 21 years old, i live in Morocco, i've been web developing for the past 2 years,during this peroid i learned many programing languages you can see them in the skills box. </p>
       </div>
-      <div class="skills">
+      <div class="skl-container">
+      <div class="skills" id="skills">
          <h1>MY SKILLS</h1>
          <ul>
            <li class="html">HTML <i class="fab fa-html5"></i><div class="lvl html"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div></li>
@@ -59,6 +66,14 @@
            <li class="php">PHP <i class="fab fa-php"></i> <div class="lvl php"><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></div></li>
          </ul>
       </div>
+    </div>
+      <div class="exp">
+         <h1>MY WORK</h1>
+         <a href="https://7midalkesal.github.io/" target="_blank"> <img src="w1.png" alt=""> </a>
+         <a href="#"> <img src="" alt=""> </a>
+
+      </div>
+
     </div>
     </main>
     <footer>
